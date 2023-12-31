@@ -1,0 +1,35 @@
+function theme_switcher {
+    export ALACRITTY_CONF="${HOME}/.config/alacritty/alacritty.yml"
+    #===========================================================================
+    # Terminals Color Switchers
+    # This function is switching between Google Dark and Google Lithe theme for 
+    # terminals alacritty and kitty
+    #==========================================================================
+    export has_alacritty=false
+    export has_kitty=false
+
+    if [[ -f "${ALACRITTY_CONF}" ]]; then
+        echo "Here I am"
+        has_alacritty=true
+    fi
+
+    if command -v kitty &> /dev/null; then
+        has_kitty=true
+    fi
+
+    case "$1" in
+    light)
+        [[ $has_alacritty == "true" ]] && \
+            yq -i e '.import[0] = "~/.config/alacritty/themes/github_light.yaml"'  "${ALACRITTY_CONF}"
+        [[ $has_kitty == "true" ]] && kitty +kitten themes --reload-in=all Atom One Light
+        ;;
+    dark)
+        [[ $has_alacritty == "true" ]] && \
+            yq -i e '.import[0] = "~/.config/alacritty/themes/github_dark.yaml"'  "${ALACRITTY_CONF}"
+        [[ $has_kitty == "true" ]] && kitty +kitten themes --reload-in=all Material Dark
+        ;;
+    *)
+        echo $"Usage: theme_switcher {light|dark}"
+    esac
+}
+

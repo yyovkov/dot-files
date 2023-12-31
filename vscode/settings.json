@@ -1,0 +1,187 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.fontAliasing": "antialiased",
+    "workbench.colorCustomizations": {
+
+        "peekView.border": "#50A69B",
+        "peekViewTitle.background": "#002b36",
+        "peekViewResult.background": "#00212b",
+        "peekViewEditor.background": "#002b36",
+        "peekViewEditor.matchHighlightBackground": "#00212bAB",
+    },
+    "explorer.openEditors.visible": 0,
+    "python.terminal.activateEnvironment": true,
+    "extensions.ignoreRecommendations": true,
+    "editor.wordWrap": "on",
+    "editor.rulers": [80, 120],
+    "editor.cursorStyle": "block",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.delivery": true,
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.sqlite3": true,
+        "**/.svn": true,
+        "**/.terraform": true,
+        "**/.venv": true,
+        "**/.vscode": true,
+        "**/Berksfile.lock": true,
+        "**/chefignore": true,
+        "**/CVS": true
+    },
+    "editor.minimap.enabled": false,
+    "editor.lineNumbersMinChars": 1,
+    "editor.glyphMargin": false,
+    // "editor.folding": false,
+    // Per Filetype Tab Size
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[vue-html]": {
+        "editor.tabSize": 2
+    },
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.formatOnType": true
+    },
+    "[json]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "[terraform]": {
+        "editor.tabSize": 2
+    },
+    "[makefile]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false
+    },
+    "[django-html]": {
+        "editor.tabSize": 4
+    },
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+        "editor.tabSize": 2
+    },
+    "[css]": {
+        "editor.tabSize": 2
+    },
+    "[hcl]": {
+        "editor.tabSize": 2
+    },
+    "[shellscript]": {
+        "editor.tabSize": 4
+    },
+    "git.autofetch": true,
+    "editor.fontSize": 16,
+    "files.associations": {
+        "*.mkt": "rosScript",
+        "*.ks": "properties",
+        "*.html": "html"
+    },
+    "terminal.integrated.defaultProfile.osx": "bash",
+    "terminal.integrated.profiles.osx": {
+        "zsh": {
+            "path": "/usr/loca/bin/bash"
+        }
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "go.formatTool": "goimports",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-c>": false,
+        "<C-v>": false
+    },
+    "material-icon-theme.folders.color": "#26a69a",
+    "material-icon-theme.folders.theme": "classic",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Pylance",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "[go]": {
+
+        "editor.tabSize": 2,
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": false
+        },
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.defaultFormatter": "golang.go"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "redhat.telemetry.enabled": false,
+    "files.insertFinalNewline": true,
+    "print.alternateBrowser": false,
+    "settingsSync.ignoredExtensions": [
+        "shan.code-settings-sync"
+    ],
+    "sync.syncExtensions": true,
+    "sync.gist": "f20fd3a609378a9ded92da9063588d98",
+    "editor.fontFamily": "'Source Code Pro',   Monaco, 'Courier New', 'Roboto Mono Thin for Powerline'",
+    "terminal.integrated.fontSize": 14,
+    "go.enableCodeLens": {
+        "runtest": false
+    },
+    "go.editorContextMenuCommands": {},
+    "breadcrumbs.enabled": false,
+    "window.autoDetectColorScheme": true,
+    "python.defaultInterpreterPath": "python3",
+    "editor.acceptSuggestionOnEnter": "smart",
+    "python.venvPath": "${workspaceFolder}/.venv",
+    // "settingsSync.ignoredSettings": [
+    //     "-python.venvPath"
+    // ],
+    "editor.largeFileOptimizations": false,
+    "git.openRepositoryInParentFolders": "always",
+    "workbench.preferredLightColorTheme": "GitHub Light",
+    "workbench.iconTheme": "vscode-great-icons",
+    "terminal.integrated.fontFamily": "SF Mono Powerline",
+    "editor.autoClosingQuotes": "never",
+    "editor.accessibilitySupport": "off",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.replace": "block-outline",
+    "vim.startInInsertMode": true,
+    // "gopls": {
+    //     "build.experimentalWorkspaceModule": true
+    // }
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "workbench.editor.empty.hint": "hidden",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "typescript.preferences.quoteStyle": "single",
+    "workbench.activityBar.location": "hidden",
+}

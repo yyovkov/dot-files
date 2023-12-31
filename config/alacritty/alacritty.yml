@@ -1,0 +1,17 @@
+# Alacritty Configuraiton file
+font:
+  normal:
+    family: SF Mono Powerline
+    # family: Roboto Mono for Powerline
+    style: Regular
+  size: 14.0
+scrolling:
+  history: 10000
+import:
+  - ~/.config/alacritty/themes/github_dark.yaml
+window:
+  decorations: full
+
+# Change the alacritty theme from command line:
+# yq -i e '.import[0] = "~/.config/alacritty/themes/github_light.yaml"' ~/.config/alacritty/alacritty.yml
+# yq -i e '.import[0] = "~/.config/alacritty/themes/github_dark.yaml"' ~/.config/alacritty/alacritty.yml

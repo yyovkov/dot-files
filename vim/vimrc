@@ -1,0 +1,20 @@
+syntax on
+set mouse=r
+set number
+set encoding=utf-8
+
+" Automatically change cwd to file's one
+set autochdir
+
+"===============================================================================
+" Filetepe Settings
+"===============================================================================
+filetype plugin indent on
+setlocal shiftwidth=4 softtabstop=4 expandtab
+
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType yaml,json setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType html,ruby setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType sh setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType make set noexpandtab

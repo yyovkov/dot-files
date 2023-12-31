@@ -1,0 +1,5 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    { "key": "cmd+b",                 "command": "workbench.action.toggleSidebarVisibility" },
+    { "key": "cmd+c",                 "command": "editor.action.clipboardCopyAction"},
+]

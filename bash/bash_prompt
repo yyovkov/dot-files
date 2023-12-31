@@ -1,0 +1,29 @@
+#===============================================================================
+# Setup Prompt
+#===============================================================================
+OSICON=""
+[[ ${OSTYPE} == "linux-gnu"* ]] && OSICON=""
+[[ ${OSTYPE} == "darwin"* ]] && OSICON=""
+
+PR_COLOR1='\[\033[1;38;5;231;48;5;31m\]'
+PR_COLOR2='\[\033[1;38;5;31;49;22m\]'
+if who am i | grep -2 '(.\{8,\})' > /dev/null 2>&1; then
+    _PS1_HOSTNAME="$(hostname -s)"
+    PR_COLOR1='\[\033[0;38;5;231;48;5;22m\]'
+    PR_COLOR2='\[\033[0;38;5;22;49;22m\]'
+
+fi
+
+export PS1="${PR_COLOR1}"'$_PS1'" ${OSICON} ${PR_COLOR2}\[\033[0m\] "
+
+# Setup Shell Prompt Warnings
+PROMPT_COMMAND=prompter
+
+function prompter() {
+    _PS1=""
+    [[ -n ${_PS1_HOSTNAME} ]] && _PS1="${_PS1_HOSTNAME}"
+    # Set python virtual env prompt
+    [[ -n ${VIRTUAL_ENV} ]] && _PS1="${_PS1}  "
+    # Check if directory is git repository
+    $(git status --porcelain &> /dev/null) && _PS1="${_PS1}  "
+}
