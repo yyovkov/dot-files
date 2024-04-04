@@ -16,15 +16,24 @@ alt + shift - l : yabai -m window --resize left:20:0  || yabai -m window --resiz
 ctrl + alt - h : yabai -m space --mirror y-axis
 ctrl + alt - j : yabai -m space --mirror x-axis
 
+# ==============================================================================
+# Ctrl + Shift
+# ==============================================================================
 # Swap windows
 ctrl + shift - h : yabai -m window --swap west
 ctrl + shift - j : yabai -m window --swap south
 ctrl + shift - k : yabai -m window --swap north
 ctrl + shift - l : yabai -m window --swap east
 
+# Setup dev environment
+ctrl + shift - n : ~/.config/yabai/scripts/setup_dev_layout.sh
+
 # Toggle window float
 ctrl + shift - z : yabai -m window --toggle float
 
+# Toggle full screen
+ctrl + shift - f : yabai -m window --toggle zoom-fullscreen
+
 # Reset the windows size
-ctrl + shift -r : yabai -m space --balance
+ctrl + shift - r : yabai -m space --balance
 
