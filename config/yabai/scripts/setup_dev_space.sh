@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Description: This script sretup laout for development work
 # by opening and arranging "Visual Studio Code", Googl Chrome"
-# and "WezInk" terminal
+# and "WezTerm" terminal
 #
 # For every app to be open should be create bash array that contains this fields:
 # apptype=("<Application Name>" "<Application Window Name>" "<shell command to start the app>")
@@ -51,9 +51,9 @@ do
 done
 
 # Arrange windows in the current space
-yabai -m config split_ratio 0.50
-yabai -m config auto_balance off
 yabai -m window $wi_editor --toggle float
+yabai -m window $wi_editor --insert east
 yabai -m window $wi_browser --toggle float
-yabai -m config split_ratio 0.66
+yabai -m window $wi_editor --insert south
 yabai -m window $wi_terminal --toggle float
+yabai -m window $wi_editor --ratio abs:0.66
