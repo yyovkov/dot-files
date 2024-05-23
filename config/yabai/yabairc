@@ -1,19 +1,12 @@
-# bsp, stack or float
-yabai -m config layout bsp
-
-## padding
+# Set bottom padding
 yabai -m config bottom_padding 1
 
-## Enable only specific apps
-# yabai -m rule --add app!="^(Google Chrome|kitty|Code|Chromium)$" manage=off 
-yabai -m rule --add app!="^(Google Chrome|kitty|Code)$" manage=off 
+# Disable all app by default
+yabai -m rule --add app=".*" manage=off 
 
 #===============================================================================
 # Yabai Cheat Sheet
 #===============================================================================
-# Check windows name
-# # yabai -m query --windows | jq -r '.[].app'
-# Enforce BSD
-# $ yabai -m space --layout bsp
-# Restart Yabai Service
-# $ yabai --restart-service
+## Restart Yabai Service
+# $ yabai --stop-service
+# $ yabai --start-service

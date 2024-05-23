@@ -37,6 +37,9 @@ ctrl + shift - f : yabai -m window --toggle zoom-fullscreen
 # Reset the windows size
 ctrl + shift - r : yabai -m space --balance
 
+# Switch current space to float mode
+ctrl + shift - q : yabai -m space --layout float
+
 # ==============================================================================
 # Grid positioning for a window
 # Description:
@@ -52,7 +55,7 @@ alt + shift - down : yabai -m window --grid 12:12:0:6:12:6
 
 # Set Window position based on halves
 # top-left corner:
-alt + shift - i: yabai -m window --grid 12:12:0:0:6:6
+alt + shift - i : yabai -m window --grid 12:12:0:0:6:6
 # top-middle position:
 alt + shift - o : yabai -m window --grid 12:12:3:0:6:6
 # top-right corner:

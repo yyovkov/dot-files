@@ -24,6 +24,11 @@ config.enable_tab_bar = false
 config.font = wezterm.font('SF Mono Powerline', { weight = 'Regular'})
 config.font_size = 15.0
 
+-- How many lines of scrollback you want to retain per tab
+config.scrollback_lines = 10000000000
+
+config.audible_bell = "Disabled"
+
 ---
 -- Setting up window padding
 --
