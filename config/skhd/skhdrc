@@ -38,7 +38,8 @@ ctrl + shift - f : yabai -m window --toggle zoom-fullscreen
 ctrl + shift - r : yabai -m space --balance
 
 # Switch current space to float mode
-ctrl + shift - q : yabai -m space --layout float
+ctrl + shift - q : yabai -m space --layout float 
+ctrl + shift - e : bash ~/.config/skhd/scripts/rotate_layouts.sh
 
 # ==============================================================================
 # Grid positioning for a window
@@ -55,20 +56,22 @@ alt + shift - down : yabai -m window --grid 12:12:0:6:12:6
 
 # Set Window position based on halves
 # top-left corner:
-alt + shift - i : yabai -m window --grid 12:12:0:0:6:6
+alt + shift - i : yabai -m window --grid 12:12:0:0:6:4
+alt + shift - 0x21 : yabai -m window --grid 12:12:0:0:6:8
 # top-middle position:
-alt + shift - o : yabai -m window --grid 12:12:3:0:6:6
+alt + shift - o : yabai -m window --grid 12:12:3:0:6:4
 # top-right corner:
-alt + shift - p : yabai -m window --grid 12:12:6:0:6:6
+alt + shift - p : yabai -m window --grid 12:12:6:0:6:4
+alt + shift - 0x1E : yabai -m window --grid 12:12:6:0:6:8
 # mid-left corner:
-alt + shift - j : yabai -m window --grid 12:12:0:3:6:6
+alt + shift - j : yabai -m window --grid 12:12:0:4:6:4
 # mid-mid side:
-alt + shift - k : yabai -m window --grid 12:12:3:3:6:6
+alt + shift - k : yabai -m window --grid 12:12:3:4:6:4
 # mid-right corner:
-alt + shift - l : yabai -m window --grid 12:12:6:3:6:6
+alt + shift - l : yabai -m window --grid 12:12:6:4:6:4
 # botom-left corner:
-alt + shift - b : yabai -m window --grid 12:12:0:6:6:6
+alt + shift - b : yabai -m window --grid 12:12:0:8:6:4
 # botom-mid position
-alt + shift - n : yabai -m window --grid 12:12:3:6:6:6
+alt + shift - n : yabai -m window --grid 12:12:3:8:6:4
 # botom-right corner
-alt + shift - m : yabai -m window --grid 12:12:6:6:6:6
+alt + shift - m : yabai -m window --grid 12:12:6:8:6:4
