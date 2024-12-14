@@ -63,15 +63,19 @@ alt + shift - o : yabai -m window --grid 12:12:3:0:6:4
 # top-right corner:
 alt + shift - p : yabai -m window --grid 12:12:6:0:6:4
 alt + shift - 0x1E : yabai -m window --grid 12:12:6:0:6:8
-# mid-left corner:
+# mid-left side:
 alt + shift - j : yabai -m window --grid 12:12:0:4:6:4
+alt + shift - 0x29 : yabai -m window --grid 12:12:0:2:6:8
 # mid-mid side:
 alt + shift - k : yabai -m window --grid 12:12:3:4:6:4
-# mid-right corner:
+# mid-right side:
 alt + shift - l : yabai -m window --grid 12:12:6:4:6:4
+alt + shift - 0x27 : yabai -m window --grid 12:12:6:2:6:8
 # botom-left corner:
 alt + shift - b : yabai -m window --grid 12:12:0:8:6:4
+alt + shift - 0x2B : yabai -m window --grid 12:12:0:4:6:8
 # botom-mid position
 alt + shift - n : yabai -m window --grid 12:12:3:8:6:4
 # botom-right corner
 alt + shift - m : yabai -m window --grid 12:12:6:8:6:4
+alt + shift - 0x2F : yabai -m window --grid 12:12:6:4:6:8
