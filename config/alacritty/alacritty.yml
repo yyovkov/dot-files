@@ -1,17 +1,27 @@
-# Alacritty Configuraiton file
-font:
-  normal:
-    family: SF Mono Powerline
-    # family: Roboto Mono for Powerline
-    style: Regular
-  size: 14.0
-scrolling:
-  history: 10000
-import:
-  - ~/.config/alacritty/themes/github_dark.yaml
-window:
-  decorations: full
+general.import = ["/Users/yyovkov/.config/alacritty/themes/github_dark.toml"]
+general.working_directory = "/Users/yyovkov/Projects/Triple"
 
-# Change the alacritty theme from command line:
-# yq -i e '.import[0] = "~/.config/alacritty/themes/github_light.yaml"' ~/.config/alacritty/alacritty.yml
-# yq -i e '.import[0] = "~/.config/alacritty/themes/github_dark.yaml"' ~/.config/alacritty/alacritty.yml
+[font]
+    size = 14.0
+
+[font.normal]
+    family = "SF Mono Powerline"
+    style  = "Regular"
+
+[scrolling]
+    history = 100000
+
+[window]
+    decorations = "Full"
+    # decorations = "Transparent"
+    # decorations = "Buttonless"
+    # padding = { x = 0, y = 25 }
+
+[keyboard]
+    bindings = [
+        { key = "F", mods = "Command", action = "ScrollPageUp" },
+        { key = "B", mods = "Command", action = "ScrollPageDown" },
+        { key = "F", mods = "Command", mode = "~Search", action = "none" },
+        { key = "B", mods = "Command", mode = "~Search", action = "none" },
+        { key = "T", mods = "Command", action = "none" },
+    ]

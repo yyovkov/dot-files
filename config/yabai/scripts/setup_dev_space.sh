@@ -10,6 +10,9 @@ browser=("Google Chrome" "Google Chrome" "open -na 'Google Chrome' --args --new-
 editor=("Visual Studio Code" "Code" "open -na 'Visual Studio Code' --args --new-window")
 terminal=("Wezterm" "WezTerm" "open -na 'WezTerm'")
 
+# Enable current space bsp layout
+yabai -m space --layout bsp
+
 # Check which applications are already started in the current space
 for app in browser editor terminal
 do
@@ -20,10 +23,6 @@ do
   export wi_${app}=$(yabai -m query --windows --space \
     | jq -r --arg app "${_window_name}" '[.[] | select (.app==$app) .id].[0]')
 done
-
-echo wi_browser: $wi_browser
-echo wi_editor: $wi_editor
-echo wi_terminal: $wi_terminal
 
 # Start the applications if the are not already start in the currect space
 for app in browser editor terminal
