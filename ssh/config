@@ -1,14 +1,17 @@
-Host github.com
-    HostName github.com
-    User git
+IdentityFile ~/.ssh/id_rsa
+IdentityFile ~/.ssh/id_ed25519
+
+Host gw.castle.yyovkov.net
+    HostName gw.castle.yyovkov.net
+    User root
+
+Host 192.168.104.1
+    HostKeyAlgorithms +ssh-rsa,ssh-dss
+
+Host 192.168.105.2
+    HostKeyAlgorithms +ssh-rsa,ssh-dss
+
+Host nn.hubata.net one.hubata.net
     IdentityFile ~/.ssh/id_rsa
+    PubKeyAcceptedKeyTypes +ssh-rsa
 
-# Should have my.github.com alias to /etc/resolve conf
-Host my.github.com
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/my/id_rsa
-
-Host *.lab.yyovkov.net
-    User    labuser
-    IdentityFile ~/.ssh/lab/id_rsa
