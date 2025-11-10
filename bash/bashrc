@@ -3,7 +3,6 @@
 #===============================================================================
 [[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 
-
 #===============================================================================
 # Bash passwords
 #===============================================================================
@@ -42,6 +41,7 @@ export PROJECTSDIR="$HOME/Projects"
 LTNAME="en_US.UTF-8"
 export LC_CTYPE=${LTNAME}
 export LC_ALL=${LTNAME}
+export LC_COLLATE=${LTNAME}
 
 
 #===============================================================================
@@ -89,6 +89,12 @@ export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:$PATH
 #===============================================================================
 # export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
+
+
+#===============================================================================
+# Setup rust cargo
+#===============================================================================
+export PATH="/Users/yyovkov/.cargo/bin:$PATH"
 
 
 #===============================================================================
@@ -149,13 +155,25 @@ PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 
 #===============================================================================
+# PATH Add google-cloud-sdk
+#===============================================================================
+PATH="/opt/homebrew/share/google-cloud-sdk/bin:$PATH"
+
+#===============================================================================
 # Enable bash completion
 #===============================================================================
 BASH_COMPLETION="/opt/homebrew/etc/profile.d/bash_completion.sh"
 [ -f ${BASH_COMPLETION} ] && source ${BASH_COMPLETION}
-
+ 
+#===============================================================================
+# Setup default KVM host for virsh
+#===============================================================================
+LIBVIRT_DEFAULT_URI="qemu+ssh://box-01.castle.yyovkov.net/system"
 
 #===============================================================================
 # Local Functions
 #===============================================================================
 [ -f ~/.bash_functions ] && . ~/.bash_functions
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/yyovkov/.cache/lm-studio/bin"

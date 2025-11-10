@@ -1,0 +1,29 @@
+# Font
+font-size = 15
+font-family = "Source Code Pro for Powerline"
+
+# Cursor
+cursor-style = block
+cursor-invert-fg-bg = true
+cursor-style-blink = true
+mouse-hide-while-typing = true
+
+# Scroll
+# scrollback-limit = 4294967295 # 4 GB
+scrollback-limit = 104857600
+
+# Keybindings
+keybind = super+d=ignore
+keybind = ctrl+l=clear_screen
+
+# Shell integration
+shell-integration = detect
+shell-integration-features = no-cursor,ssh-env
+
+# Window settings
+macos-icon = glass
+macos-titlebar-style = tabs
+window-width = 100
+window-height = 22
+
+background-opacity = 1.00
