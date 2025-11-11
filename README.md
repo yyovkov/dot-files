@@ -7,6 +7,12 @@ files here are setup created and maintaned manually with it's pros and cons.
 
 Any feedback is welcome!
 
+## Required brew packages
+
+``` bash
+brew install font-sauce-code-pro-nerd-font
+```
+
 ## Setup bash
 
 ``` bash

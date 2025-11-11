@@ -1,21 +1,25 @@
-general.import = ["/Users/yyovkov/.config/alacritty/themes/github_dark.toml"]
-general.working_directory = "/Users/yyovkov/Projects/Triple"
+[general]
+    # import = ["/Users/yyovkov/.config/alacritty/themes/github_dark.toml"]
+    import = ["/Users/yyovkov/.config/alacritty/themes/ghosty_default_style_dark.toml"]
+    working_directory = "/Users/yyovkov/Projects/Triple/triple"
 
 [font]
-    size = 14.0
+    size = 15.0
 
 [font.normal]
-    family = "SF Mono Powerline"
+    # family = "SF Mono Powerline"
+    family = "SauceCodePro Nerd Font Mono"
     style  = "Regular"
 
 [scrolling]
     history = 100000
 
 [window]
-    decorations = "Full"
-    # decorations = "Transparent"
+    # decorations = "Full"
+    decorations = "Transparent"
     # decorations = "Buttonless"
-    # padding = { x = 0, y = 25 }
+    padding = { x = 0, y = 24 }
+    dynamic_padding = true
 
 [keyboard]
     bindings = [
