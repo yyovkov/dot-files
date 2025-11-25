@@ -14,7 +14,7 @@ if who am i | grep -2 '(.\{8,\})' > /dev/null 2>&1; then
 
 fi
 
-export PS1="${PR_COLOR1}"'$_PS1'" ${OSICON} ${PR_COLOR2}\[\033[0m\] "
+export PS1="${PR_COLOR1}\${_PS1} ${OSICON} ${PR_COLOR2}\[\033[0m\] "
 
 # Setup Shell Prompt Warnings
 PROMPT_COMMAND=prompter
@@ -23,7 +23,7 @@ function prompter() {
     _PS1=""
     [[ -n ${_PS1_HOSTNAME} ]] && _PS1="${_PS1_HOSTNAME}"
     # Set python virtual env prompt
-    [[ -n ${VIRTUAL_ENV} ]] && _PS1="${_PS1}  "
+    [[ -n ${VIRTUAL_ENV} ]] && _PS1="${_PS1} "
     # Check if directory is git repository
-    $(git status --porcelain &> /dev/null) && _PS1="${_PS1}  "
+    $(git status --porcelain &> /dev/null) && _PS1="${_PS1} "
 }

@@ -1,6 +1,8 @@
 # Font
 font-size = 15
-font-family = "Source Code Pro for Powerline"
+# font-family = "Source Code Pro for Powerline"
+# font-family = "CaskaydiaMono Nerd Font Mono"
+font-family = "SauceCodePro Nerd Font Mono"
 
 # Cursor
 cursor-style = block
