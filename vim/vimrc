@@ -2,13 +2,15 @@ syntax on
 set mouse=r
 set number
 set encoding=utf-8
+set noshowmode
+set noruler
 
 " Automatically change cwd to file's one
 set autochdir
 
-"===============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filetepe Settings
-"===============================================================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
 setlocal shiftwidth=4 softtabstop=4 expandtab
 
@@ -18,3 +20,75 @@ autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType html,ruby setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType sh setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType make set noexpandtab
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sewtup staus bar
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2
+set statusline=
+set statusline+=%1*
+set statusline+=\ 
+set statusline+=%2*
+set statusline+=
+set statusline+=%3*
+set statusline+=%{StatuslineMode()}
+set statusline+=%2*
+set statusline+=
+set statusline+=%1*
+set statusline+=\ 
+set statusline+=file:\ 
+set statusline+=%f
+set statusline+=\ 
+set statusline+=%=
+set statusline+=[buff\ 
+set statusline+=%n
+set statusline+=]
+set statusline+=\ 
+set statusline+=%LL
+set statusline+=\ 
+set statusline+=%4*
+set statusline+=
+set statusline+=%5*
+set statusline+=curs\ 
+set statusline+=%l
+set statusline+=:
+set statusline+=%c
+set statusline+=%4*
+set statusline+=
+set statusline+=%1*
+set statusline+=\ 
+
+hi User1 ctermbg=black ctermfg=white guibg=black guifg=white
+hi User2 ctermbg=black ctermfg=lightgreen guibg=black guifg=lightgreen
+hi User3 ctermbg=lightgreen ctermfg=black guibg=lightgreen guifg=black
+hi User4 ctermbg=black ctermfg=darkgrey guibg=black guifg=darkgrey
+hi User5 ctermbg=darkgrey ctermfg=black guibg=darkgrey guifg=black
+
+function! StatuslineMode()
+  let l:mode=mode()
+  if l:mode==#"n"
+    return "NORMAL"
+  elseif l:mode==?"v"
+    return "VISUAL"
+  elseif l:mode==#"i"
+    return "INSERT"
+  elseif l:mode==#"R"
+    return "REPLACE"
+  elseif l:mode==?"s"
+    return "SELECT"
+  elseif l:mode==#"t"
+    return "TERMINAL"
+  elseif l:mode==#"c"
+    return "COMMAND"
+  elseif l:mode==#"!"
+    return "SHELL"
+  endif
+endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key remapping
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable <F1>
+nmap <F1> :echo<CR>
