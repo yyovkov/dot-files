@@ -41,6 +41,10 @@ set statusline+=\
 set statusline+=file:\ 
 set statusline+=%f
 set statusline+=\ 
+set statusline+=%7*
+set statusline+=%m
+set statusline+=%1*
+set statusline+=\ 
 set statusline+=%=
 set statusline+=[buff\ 
 set statusline+=%n
@@ -65,6 +69,8 @@ hi User2 ctermbg=black ctermfg=lightgreen guibg=black guifg=lightgreen
 hi User3 ctermbg=lightgreen ctermfg=black guibg=lightgreen guifg=black
 hi User4 ctermbg=black ctermfg=darkgrey guibg=black guifg=darkgrey
 hi User5 ctermbg=darkgrey ctermfg=black guibg=darkgrey guifg=black
+hi User6 ctermbg=red ctermfg=black guibg=red guifg=black
+hi User7 ctermbg=black ctermfg=red guibg=black guifg=red
 
 function! StatuslineMode()
   let l:mode=mode()
