@@ -7,6 +7,14 @@ files here are setup created and maintaned manually with it's pros and cons.
 
 Any feedback is welcome!
 
+## Install on LinuX
+
+For now the script is tested only on Ubuntu 24.04
+
+``` bash
+curl -s https://raw.githubusercontent.com/yyovkov/dot-files/refs/heads/master/_scripts/install_dotfiles.sh | bash -
+```
+
 ## Required brew packages
 
 ``` bash
