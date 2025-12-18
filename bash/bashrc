@@ -1,14 +1,4 @@
 #===============================================================================
-# Setup Prompt 
-#===============================================================================
-[[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
-
-#===============================================================================
-# Bash passwords
-#===============================================================================
-[[ -f ~/.bash_passwords ]] && source ~/.bash_passwords
-
-#===============================================================================
 # Bash settings
 #===============================================================================
 # Disable Bash Sessions
@@ -20,22 +10,13 @@ export HISTTIMEFORMAT='%F %T   '
 export HISTSIZE=1000
 export HISTIGNORE='history*:clear'
 
-# Disable deprication warning
-export BASH_SILENCE_DEPRECATION_WARNING=1
-
 # Disable bash completion dollar sign escape
 shopt -s direxpand
-
-# Export API Keys
-export VAGRANT_CLOUD_TOKEN=$PW_VAGRANT_CLOUD_TOKEN
 
 # My Useful Aliases
 set -o vi 
 alias ls='ls -G'
 alias ll='ls -l'
-
-# Export Hudgeserv Desktop Settings
-export PROJECTSDIR="$HOME/Projects"
 
 # Setup Locale
 LTNAME="en_US.UTF-8"
@@ -43,137 +24,13 @@ export LC_CTYPE=${LTNAME}
 export LC_ALL=${LTNAME}
 export LC_COLLATE=${LTNAME}
 
-
-#===============================================================================
-# Setup Python 
-#===============================================================================
-# Disable default python virtual env prompt change
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-# Setting up Python pip
-export PIP_REQUIRE_VIRTUALENV=true
-#
-# Setup PATH variabels
-DIRS="/usr/local/opt/libpq/bin"
-for dir in $DIRS
-do
-	if [ -d $dir ]; then
-		PATH=$PATH:$dir
-		export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
-		export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
-		export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
-	fi
-done
-
-
-#===============================================================================
-# Setup Java
-#===============================================================================
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-
-
-#===============================================================================
-# Setup GO Variables
-#===============================================================================
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
-
-
-#===============================================================================
-# Add /usr/local/sbin to PATH
-#===============================================================================
-export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:$PATH
-
-
-#===============================================================================
-# Setup node
-#===============================================================================
-# export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
-export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
-
-
-#===============================================================================
-# Setup rust cargo
-#===============================================================================
-export PATH="/Users/yyovkov/.cargo/bin:$PATH"
-
-
-#===============================================================================
-# Setup terrafrom
-#===============================================================================
-complete -C /opt/homebrew/Cellar/tfenv/3.0.0/versions/1.4.4/terraform terraform
-
-
-#===============================================================================
-# Function to clear DNS cache
-#===============================================================================
-function flush-dns () {
-	sudo dscacheutil -flushcache
-	sudo killall -HUP mDNSResponder
-}
-
-
-#===============================================================================
-# Set direnv
-#===============================================================================
-eval "$(direnv hook bash)"
-export DIRENV_LOG_FORMAT=
-
-
-#===============================================================================
-# TMUX Settings
-#===============================================================================
-export ENABLE_TMUX=no
-if [[ ${TERM_PROGRAM} = 'Apple_Terminal' ]] && [[ ${ENABLE_TMUX} = 'yes' ]]; then
-  # Start tumux
-  if command -v tmux > /dev/null; then
-    if [[ -z $TMUX ]]  && [[ ! $TERM =~ screen ]]; then
-      if tmux has-session 2>/dev/null; then
-        # exec tmux attach
-        exec tmux # new -s ${USER}
-      else
-        exec tmux # new -s ${USER}
-      fi
-    fi
-  fi
-fi
-  
-# Set functions if TMUX is used
-if [[ ! -z "$TMUX" ]]; then
-  ssh() {
-    # current_window_name=$(tmux display-message -p '#W')
-    tmux rename-window " $(echo $* | cut -d . -f 1)"
-    command ssh "$@"; tmux rename-window "$current_window_name"
-  }
-fi
-
-
-#===============================================================================
-# PATH add gnubin as prefered
-#===============================================================================
-PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-
-
-#===============================================================================
-# PATH Add google-cloud-sdk
-#===============================================================================
-PATH="/opt/homebrew/share/google-cloud-sdk/bin:$PATH"
-
-#===============================================================================
 # Enable bash completion
-#===============================================================================
 BASH_COMPLETION="/opt/homebrew/etc/profile.d/bash_completion.sh"
 [ -f ${BASH_COMPLETION} ] && source ${BASH_COMPLETION}
- 
-#===============================================================================
-# Setup default KVM host for virsh
-#===============================================================================
-LIBVIRT_DEFAULT_URI="qemu+ssh://box-01.castle.yyovkov.net/system"
+
 
 #===============================================================================
-# Local Functions
+# Setup PATH variable (DO NOT CHANGE HERE)
 #===============================================================================
-[ -f ~/.bash_functions ] && . ~/.bash_functions
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/yyovkov/.cache/lm-studio/bin"
+# NOTE: All path variables should be added to `.bahrc.d/paths`
+export PATH
