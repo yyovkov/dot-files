@@ -23,47 +23,9 @@ autocmd FileType make set noexpandtab
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sewtup staus bar
+" Custom colors
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set laststatus=2
-set statusline=
-set statusline+=%1*
-set statusline+=\ 
-set statusline+=%2*
-set statusline+=
-set statusline+=%3*
-set statusline+=%{StatuslineMode()}
-set statusline+=%2*
-set statusline+=
-set statusline+=%1*
-set statusline+=\ 
-set statusline+=file:\ 
-set statusline+=%f
-set statusline+=\ 
-set statusline+=%7*
-set statusline+=%m
-set statusline+=%1*
-set statusline+=\ 
-set statusline+=%=
-set statusline+=[buff\ 
-set statusline+=%n
-set statusline+=]
-set statusline+=\ 
-set statusline+=%LL
-set statusline+=\ 
-set statusline+=%4*
-set statusline+=
-set statusline+=%5*
-set statusline+=curs\ 
-set statusline+=%l
-set statusline+=:
-set statusline+=%c
-set statusline+=%4*
-set statusline+=
-set statusline+=%1*
-set statusline+=\ 
-
 hi User1 ctermbg=black ctermfg=white guibg=black guifg=white
 hi User2 ctermbg=black ctermfg=lightgreen guibg=black guifg=lightgreen
 hi User3 ctermbg=lightgreen ctermfg=black guibg=lightgreen guifg=black
@@ -71,17 +33,40 @@ hi User4 ctermbg=black ctermfg=darkgrey guibg=black guifg=darkgrey
 hi User5 ctermbg=darkgrey ctermfg=black guibg=darkgrey guifg=black
 hi User6 ctermbg=red ctermfg=black guibg=red guifg=black
 hi User7 ctermbg=black ctermfg=red guibg=black guifg=red
+hi User8 ctermbg=black ctermfg=cyan guibg=black  ctermfg=cyan
+hi User9 ctermbg=cyan ctermfg=black guibg=cyan ctermfg=black
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Setup staus bar
+" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2
+" set statusline=
+set statusline=%1*\ 
+set statusline+=%{%StatuslineMode()%}
+set statusline+=%1*
+" Middle Section
+set statusline+=%=
+set statusline+=%7*%M%1*\ %f
+" Right section
+set statusline+=%=
+set statusline+=[buff\ %n]\ %LL\ 
+set statusline+=%4*%5*curs\ %l:%c%4*
+set statusline+=%1*\ 
 
 function! StatuslineMode()
   let l:mode=mode()
   if l:mode==#"n"
-    return "NORMAL"
+    " return "NORMAL"
+    return "%2*%3*NORMAL%2*"
   elseif l:mode==?"v"
-    return "VISUAL"
+    " return "VISUAL"
+    return "%#Statement#%#Search#VISUAL%#Statement#"
   elseif l:mode==#"i"
-    return "INSERT"
+    return "%4*%5*INSERT%4*"
   elseif l:mode==#"R"
-    return "REPLACE"
+    return "%8*%9*REPLACE%8*"
   elseif l:mode==?"s"
     return "SELECT"
   elseif l:mode==#"t"
@@ -92,6 +77,7 @@ function! StatuslineMode()
     return "SHELL"
   endif
 endfunction
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key remapping
