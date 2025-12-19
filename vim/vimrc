@@ -58,10 +58,8 @@ set statusline+=%1*\
 function! StatuslineMode()
   let l:mode=mode()
   if l:mode==#"n"
-    " return "NORMAL"
     return "%2*%3*NORMAL%2*"
   elseif l:mode==?"v"
-    " return "VISUAL"
     return "%#Statement#%#Search#VISUAL%#Statement#"
   elseif l:mode==#"i"
     return "%4*%5*INSERT%4*"
@@ -70,11 +68,11 @@ function! StatuslineMode()
   elseif l:mode==?"s"
     return "SELECT"
   elseif l:mode==#"t"
-    return "TERMINAL"
+    return "%2*%3*TERMINAL%2*"
   elseif l:mode==#"c"
-    return "COMMAND"
+    return "%2*%3*COMMAND%2*"
   elseif l:mode==#"!"
-    return "SHELL"
+    return "%2*%3*SHELL%2*"
   endif
 endfunction
 
