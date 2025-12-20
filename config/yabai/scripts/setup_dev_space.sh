@@ -8,7 +8,9 @@
 
 browser=("Google Chrome" "Google Chrome" "open -na 'Google Chrome' --args --new-window")
 editor=("Visual Studio Code" "Code" "open -na 'Visual Studio Code' --args --new-window")
-terminal=("Wezterm" "WezTerm" "open -na 'WezTerm'")
+# terminal=("Wezterm" "WezTerm" "open -na 'WezTerm'")
+# terminal=("Terminal" "Terminal" "open -na 'Terminal'")
+terminal=("GhostTY" "Ghostty" "open -na 'Ghostty'")
 
 # Enable current space bsp layout
 yabai -m space --layout bsp
