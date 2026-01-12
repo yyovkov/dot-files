@@ -17,7 +17,7 @@ fi
 export PS1="${PR_COLOR1}\${_PS1}${PR_COLOR1} ${OSICON} ${PR_COLOR2}\[\033[0m\] "
 
 # Setup Shell Prompt Warnings
-PROMPT_COMMAND=prompter
+PROMPT_COMMAND="$PROMPT_COMMAND prompter"
 
 function prompter() {
     _PS1=""
