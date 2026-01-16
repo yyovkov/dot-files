@@ -1,31 +1,37 @@
 #===============================================================================
 # Setup Prompt
 #===============================================================================
-OSICON=""
-[[ ${OSTYPE} == "linux-gnu"* ]] && OSICON=""
-[[ ${OSTYPE} == "darwin"* ]] && OSICON=""
+ICON_OS=""
+ICON_GIT="" # ""
+ICON_PYTHON="" # ""
 
-PR_COLOR1='\[\033[1;38;5;231;48;5;31m\]'
-PR_COLOR2='\[\033[1;38;5;31;49;22m\]'
-if who am i | grep -2 '(.\{8,\})' > /dev/null 2>&1; then
-    _PS1_HOSTNAME="$(hostname -s)"
-    PR_COLOR1='\[\033[0;38;5;231;48;5;22m\]'
-    PR_COLOR2='\[\033[0;38;5;22;49;22m\]'
+[[ ${OSTYPE} == "linux-gnu"* ]] && ICON_OS=""
+[[ ${OSTYPE} == "darwin"* ]] && ICON_OS=""
 
-fi
+np() { printf '\001%s\002' "$1"; }
 
-export PS1="${PR_COLOR1}\${_PS1}${PR_COLOR1} ${OSICON} ${PR_COLOR2}\[\033[0m\] "
+PR_BG="$(np $'\e[1;38;5;231;48;5;31m')"  # your PR_COLOR1
+PR_FG="$(np $'\e[1;38;5;31;49;22m')"     # your PR_COLOR2
+PR_RST="$(np $'\e[0m')"
 
-# Setup Shell Prompt Warnings
-PROMPT_COMMAND="$PROMPT_COMMAND prompter"
+export PS1='${_PS1}${PR_BG} '"${ICON_OS}"' ${PR_FG}'"${PR_RST}"' '
 
-function prompter() {
-    _PS1=""
-    IFS=';' read -sdR -p $'\E[6n' ROW COL
-    [ "$COL" -ne 1 ] && _PS1=$'\n' 
-    [[ -n ${_PS1_HOSTNAME} ]] && _PS1="${_PS1} ${_PS1_HOSTNAME}"
-    # Set python virtual env prompt
-    [[ -n ${VIRTUAL_ENV} ]] && _PS1="${_PS1} "
-    # Check if directory is git repository
-    $(git status --porcelain &> /dev/null) && _PS1="${_PS1} "
+PROMPT_COMMAND="prompter${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
+
+prompter() {
+  _PS1=""
+
+  local row col 
+  IFS=';' read -rsdR -p $'\e[6n' row col </dev/tty
+  col=${col#*[}; col=${col%R}
+
+  if [[ $col -ne 1 ]]; then
+    _PS1+=$'\n'"${PR_BG}"
+  else
+    _PS1+="${PR_BG}"
+  fi  
+
+  [[ -n $_PS1_HOSTNAME ]] && _PS1+=" ${_PS1_HOSTNAME}"" "
+  [[ -n $VIRTUAL_ENV    ]] && _PS1+=" ${ICON_PYTHON}"" "
+  git rev-parse --is-inside-work-tree &>/dev/null && _PS1+=" ${ICON_GIT}"" "
 }
