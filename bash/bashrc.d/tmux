@@ -1,0 +1,25 @@
+#===============================================================================
+# TMUX Settings
+#===============================================================================
+export ENABLE_TMUX=no
+if [[ ${TERM_PROGRAM} = 'Apple_Terminal' ]] && [[ ${ENABLE_TMUX} = 'yes' ]]; then
+  # Start tumux
+  if command -v tmux > /dev/null; then
+    if [[ -z $TMUX ]]  && [[ ! $TERM =~ screen ]]; then
+      if tmux has-session 2>/dev/null; then
+        # exec tmux attach
+        exec tmux # new -s ${USER}
+      else
+        exec tmux # new -s ${USER}
+      fi
+    fi
+  fi
+fi
+  
+# Set functions if TMUX is used
+if [[ ! -z "$TMUX" ]]; then
+  ssh() {
+    # current_window_name=$(tmux display-message -p '#W')
+    tmux rename-window " $(echo $* | cut -d . -f 1)"
+    command ssh "$@"; tmux rename-window "$current_window_name"
+  }

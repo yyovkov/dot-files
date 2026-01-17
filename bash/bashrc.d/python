@@ -1,0 +1,19 @@
+#===============================================================================
+# Setup Python 
+#===============================================================================
+# Disable default python virtual env prompt change
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+# Setting up Python pip
+export PIP_REQUIRE_VIRTUALENV=true
+#
+# Setup PATH variabels
+DIRS="/usr/local/opt/libpq/bin"
+for dir in $DIRS
+do
+	if [ -d $dir ]; then
+		PATH=$PATH:$dir
+		export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+		export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+		export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
+	fi
+done

@@ -1,0 +1,6 @@
+#===============================================================================
+# Setup terrafrom
+#===============================================================================
+
+# Setup terraform bash completion
+complete -C /opt/homebrew/Cellar/tfenv/3.0.0/versions/1.4.4/terraform terraform
