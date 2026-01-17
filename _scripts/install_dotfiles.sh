@@ -88,3 +88,15 @@ mkdir -p $(dirname "${LOCAL_USER_LOCATION_BASHVIMMOTION}")
 _info "Download and install BASHVIMMOTION configuration directory"
 curl -sLo "${LOCAL_USER_LOCATION_BASHVIMMOTION}" "${GITHUB_REPO_URL}/${GITHUB_LOCATION_BASHVIMMOTION}"
 
+
+################################################################################
+# Python
+################################################################################
+GITHUB_LOCATION_PYTHON="bash/bashrc.d/python"
+LOCAL_USER_LOCATION_PYTHON=${HOME}/.bashrc.d/python
+
+_info "Create PYTHON configuration directory"
+mkdir -p $(dirname "${LOCAL_USER_LOCATION_PYTHON}")
+
+_info "Download and install PYTHON configuration file"
+curl -sLo "${LOCAL_USER_LOCATION_PYTHON}" "${GITHUB_REPO_URL}/${GITHUB_LOCATION_PYTHON}"
