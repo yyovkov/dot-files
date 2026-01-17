@@ -13,7 +13,6 @@ np() { printf '\001%s\002' "$1"; }
 PR_BG="$(np $'\e[1;38;5;231;48;5;31m')"
 PR_FG="$(np $'\e[1;38;5;31;49;22m')"
 if who am i | grep -2 '(.\{8,\})' > /dev/null 2>&1; then
-  _PS1_HOSTNAME="$(hostname -s)"
   PR_BG="$(np $'\e[0;38;5;231;48;5;22m')"
   PR_FG="$(np $'\e[0;38;5;22;49;22m')"
   PR_RST="$(np $'\e[0m')"
@@ -29,7 +28,7 @@ PROMPT_COMMAND="prompter${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 prompter() {
   _PS1=""
 
-  local row col 
+  local row col
   IFS=';' read -rsdR -p $'\e[6n' row col </dev/tty
   col=${col#*[}; col=${col%R}
 
@@ -37,9 +36,10 @@ prompter() {
     _PS1+=$'\n'"${PR_BG}"
   else
     _PS1+="${PR_BG}"
-  fi  
+  fi
 
-  [[ -n $_PS1_HOSTNAME ]] && _PS1+=" ${_PS1_HOSTNAME}"" "
   [[ -n $VIRTUAL_ENV    ]] && _PS1+=" ${ICON_PYTHON}"" "
   git rev-parse --is-inside-work-tree &>/dev/null && _PS1+=" ${ICON_GIT}"" "
+
+  [[ -n $_PS1_HOSTNAME ]] && _PS1+=" ${_PS1_HOSTNAME}"
 }
