@@ -12,14 +12,15 @@ np() { printf '\001%s\002' "$1"; }
 
 PR_BG="$(np $'\e[1;38;5;231;48;5;31m')"
 PR_FG="$(np $'\e[1;38;5;31;49;22m')"
-
 if who am i | grep -2 '(.\{8,\})' > /dev/null 2>&1; then
-    _PS1_HOSTNAME="$(hostname -s)"
-    PR_BG="$(np $'\e[0;38;5;231;48;5;22')"
-    PR_FG="$(np $'\e[0;38;5;22;49;22m')" 
+  _PS1_HOSTNAME="$(hostname -s)"
+  PR_BG="$(np $'\e[0;38;5;231;48;5;22m')"
+  PR_FG="$(np $'\e[0;38;5;22;49;22m')"
+  PR_RST="$(np $'\e[0m')"
 fi
 
-PR_RST="$(npwho am i | grep -2 '(.\{8,\})' $'\e[0m')"
+PR_RST="$(np $'\e[0m')"
+
 
 export PS1='${_PS1}${PR_BG} '"${ICON_OS}"' ${PR_FG}'"${PR_RST}"' '
 
