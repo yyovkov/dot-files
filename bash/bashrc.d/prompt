@@ -39,6 +39,6 @@ prompter() {
     _PS1+="${PR_BG}"
   fi
 
-  [[ -n $VIRTUAL_ENV    ]] && _PS1+=" ${ICON_PYTHON}"" "
-  git rev-parse --is-inside-work-tree &>/dev/null && _PS1+=" ${ICON_GIT}"" "
+  [[ -n $VIRTUAL_ENV    ]] && _PS1+=" ${ICON_PYTHON}"
+  git rev-parse --is-inside-work-tree &>/dev/null && _PS1+=" ${ICON_GIT}"
 }
