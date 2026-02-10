@@ -4,8 +4,17 @@ set editing-mode vi
 set show-mode-in-prompt on
 
 # Set differnt prompt cursor and messages for different vi modes
+# SET THE MODE STRING AND CURSOR TO INDICATE THE VIM MODE
+#   FOR THE NUMBER AFTER `\e[`:
+#     0: blinking block
+#     1: blinking block (default)
+#     2: steady block
+#     3: blinking underline
+#     4: steady underline
+#     5: blinking bar (xterm)
+#     6: steady bar (xterm)
 set vi-ins-mode-string "\1\e[1 q\2\e[0;97;5;231;48;5;31m[ins]\e[0m"
-set vi-cmd-mode-string "\1\e[6 q\2\e[1;31;5;231;48;5;31m[cmd]\e[0m"
+set vi-cmd-mode-string "\1\e[3 q\2\e[1;31;5;231;48;5;31m[cmd]\e[0m"
 
 set colored-stats on
 set visible-stats on
