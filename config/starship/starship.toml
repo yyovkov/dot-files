@@ -1,0 +1,64 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$terraform\
+$golang\
+$nodejs
+$character"""
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red)'
+
+[directory]
+format = '[ $path]($style)[$read_only]($read_only_style)'
+repo_root_format = '[[]($repo_root_style) $before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)'
+truncate_to_repo = true
+before_repo_root_style = 'bold red'
+repo_root_style = 'bold green'
+
+[fill]
+symbol = '.'
+style = 'bold blue'
+
+[git_branch]
+disabled = false
+symbol = ''
+format = ' [$symbol $branch]($style)'
+
+[git_status]
+format = '([\[($modified)( $untracked)\]]($style) )'
+style = 'bold purple'
+behind = '󰁮'
+modified = "[](bold red)"
+renamed = '[󰑕](bold red)'
+staged = '[++\($count\)](green)'
+stashed = '[󱣕](bold blue)'
+untracked = "[󰽒](bold red)"
+up_to_date = '[✓](bright-green)'
+
+[golang]
+symbol = ''
+format = ' [$symbol ($version)]($style)'
+
+[time]
+disabled = false
+format = '[ $time ]($style)'
+time_format = '%T'
+
+[nodejs]
+format = '[$symbol($version)]($style)'
+
+[terraform]
+symbol = '󱁢'
+format = ' [$symbol $version]($style) '
+
+[hostname]
+ssh_only = true
