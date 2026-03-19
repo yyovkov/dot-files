@@ -23,6 +23,7 @@ PR_RST="$(np $'\e[0m')"
 
 
 export PS1='${_PS1}${PS1_HOSTNAME}${PR_BG} '"${ICON_OS}"' ${PR_FG}'"${PR_RST}"' '
+export PS2='${_PS1}${PS1_HOSTNAME}${PR_BG} '"${ICON_OS}"' ${PR_FG}'"${PR_RST}"' '
 
 PROMPT_COMMAND="prompter${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 

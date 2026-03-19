@@ -1,0 +1,12 @@
+# ==============================================================================
+# Bash shell history setup
+# ==============================================================================
+COLOR_BLUE="\033[0;34m" #Blue
+COLOR_GREEN="\033[0;32m" #Blue
+COLOR_RESET="\033[0m"
+
+export SHELL_SESSION_HISTORY=0
+export HISTCONTROL="ignoreboth:erasedups"
+export HISTTIMEFORMAT=$(echo -e ${COLOR_BLUE}[%F %T] $COLOR_GREEN)
+export HISTSIZE=20000
+export HISTIGNORE='history*:clear'

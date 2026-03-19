@@ -1,22 +1,11 @@
 #===============================================================================
 # Bash settings
 #===============================================================================
-# Disable Bash Sessions
-SHELL_SESSION_HISTORY=0
-
-# Control Bash History
-export HISTCONTROL="ignoreboth:erasedups"
-export HISTTIMEFORMAT='%F %T   '
-export HISTSIZE=1000
-export HISTIGNORE='history*:clear'
-
 # Disable bash completion dollar sign escape
-shopt -s direxpand
+shopt -s direxpand no_empty_cmd_completion
 
 # My Useful Aliases
-set -o vi 
-alias ls='ls -G'
-alias ll='ls -l'
+# set -o vi # This setting is moved to ~/.inputrc
 
 # Setup Locale
 LTNAME="en_US.UTF-8"
@@ -28,9 +17,17 @@ export LC_COLLATE=${LTNAME}
 BASH_COMPLETION="/opt/homebrew/etc/profile.d/bash_completion.sh"
 [ -f ${BASH_COMPLETION} ] && source ${BASH_COMPLETION}
 
+export MANPATH=/opt/homebrew/share/man:/usr/share/man:/usr/local/share/man:/Applications/Ghostty.app/Contents/Resources/man
 
 #===============================================================================
-# Setup PATH variable (DO NOT CHANGE HERE)
+# Load additional bash files
 #===============================================================================
-# NOTE: All path variables should be added to `.bahrc.d/paths`
-export PATH
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc

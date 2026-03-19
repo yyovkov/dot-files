@@ -1,7 +1,5 @@
 #===============================================================================
-# Setup terrafrom
+# Setup direnv
 #===============================================================================
-
-# Setup terraform bash completion
-complete -C /opt/homebrew/Cellar/tfenv/3.0.0/versions/1.5.7/terraform terraform
-
+eval "$(direnv hook bash)"
+export DIRENV_LOG_FORMAT=

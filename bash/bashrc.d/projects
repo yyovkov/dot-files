@@ -2,3 +2,4 @@
 # Setup pproject directories 
 ################################################################################
 export PROJECTSDIR="$HOME/Projects"
+

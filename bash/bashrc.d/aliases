@@ -1,0 +1,16 @@
+# ==============================================================================
+# Bash aliases
+# ==============================================================================
+
+# Aliases to 'ls; command
+alias ls='ls -G'
+alias ll='ls -l'
+
+# Aliases for 'git' command
+alias git=/opt/homebrew/bin/git
+
+# Aliases for 'vim' command
+alias vim=/opt/homebrew/bin/vim
+
+# Aliases for fastfetch command
+alias neofetch=/opt/homebrew/bin/fastfetch
