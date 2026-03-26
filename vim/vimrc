@@ -8,6 +8,7 @@ set noruler
 " Automatically change cwd to file's one
 set autochdir
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filetepe Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -48,7 +49,7 @@ set statusline+=%{%StatuslineMode()%}
 set statusline+=%1*
 " Middle Section
 set statusline+=%=
-set statusline+=%7*%M%1*\ %f
+set statusline+=%7*%M%1*\ \"%f\"
 " Right section
 set statusline+=%=
 set statusline+=[buff\ %n]\ %LL\ 
@@ -82,3 +83,13 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable <F1>
 nmap <F1> :echo<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enables cursor line position tracking:
+set cursorline
+hi CursorLine None
+hi CursorLineNR None ctermfg=White
+hi LineNr ctermfg=DarkGray
